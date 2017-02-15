@@ -10,7 +10,7 @@ Edu-Care pairs individuals looking to volunteer their skills and expertise to sc
 
 The application is designed as a desktop web app first, but is completely mobile friendly.
 
-* Go to [**edu-care-app**](https://edu-care-app.herokuapp.com/) for the web app.
+* Go to [**educareapp**](https://educareapp.herokuapp.com/) for the web app.
 
 ### The Engineers
 
