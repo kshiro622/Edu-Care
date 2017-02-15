@@ -56,7 +56,7 @@ This volunteer entry will post a listing to a filterable board for search by sch
 
 ### Sample This Repo
 
-1. git clone git@github.com:a-ashbeck/project-2.git
+1. Clone repo onto your local machine
 2. npm install
 3. Create MySQL "edu_care" database
 4. node server.js 

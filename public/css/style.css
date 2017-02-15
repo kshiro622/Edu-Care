@@ -33,6 +33,10 @@ hr {
 
 /*margins*/
 
+.margin-top-150 {
+    margin-top: 150px;
+}
+
 .margin-top-130 {
     margin-top: 130px;
 }
@@ -85,6 +89,10 @@ hr {
     margin-right: 50px;
 }
 
+.margin-right-80 {
+    margin-right: 80px;
+}
+
 .margin-right-20 {
     margin-right: 20px;
 }
@@ -121,16 +129,6 @@ hr {
     margin-bottom: 0;
 }
 
-.raleway-font {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bolder;
-}
-
-.raleway-font-light {
-    font-family: 'Raleway', sans-serif;
-    font-weight: lighter;
-}
-
 
 /*Icons*/
 
@@ -161,7 +159,7 @@ hr {
     background: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
     padding-top: 30px;
-    padding-bottom: 2px;
+    padding-bottom: 30px;
 }
 
 .panel-form {
@@ -224,32 +222,19 @@ footer.page-footer {
 /*Landing*/
 
 #helping-banner {
-    background: #f8f8f8;
+    background: white;
     height: 500px;
     margin: 0;
     padding: 0;
 }
 
 #top-banner {
-    height: 500px;
-    background-image: url("../images/listening-lighter.jpg");
+    height: 620px;
+    background-image: url("../images/landing.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-}
-
-#gray-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-}
-
-#top-banner .h1-landing {
-    line-height: 50%;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 900;
-    letter-spacing: 2px;
     color: white;
     font-size: 80px;
 }
@@ -259,7 +244,7 @@ footer.page-footer {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    height: 400px;
+    height: 450px;
     padding: 0;
     margin-bottom: 0;
 }
@@ -335,17 +320,11 @@ footer.page-footer {
 /*Schools*/
 
 .welcome-schools {
-    background-image: url("../images/welcome-schools copy.jpg");
+    background-image: url("../images/welcome-schools.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 450px;
     margin-bottom: 0;
-    color: white;
-}
-
-.welcome-schools h1 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bolder;
 }
 
 .pencils-background {
@@ -356,26 +335,15 @@ footer.page-footer {
     margin-bottom: 0;
 }
 
-.desk-background {
-    background-image: url("../images/schooldesk.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+.school-how {
+    background: #f8f8f8;
     height: 450px;
     margin-bottom: 0;
 }
 
 .listings-header {
-    background-image: url("../images/science-volunteer.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 450px;
-    color: white;
+    height: 170px;
     margin-bottom: 0;
-}
-
-.listings-header h1 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bolder;
 }
 
 
@@ -388,11 +356,6 @@ footer.page-footer {
     height: 450px;
     color: white;
     margin-bottom: 0;
-}
-
-.volunteer-with-us h1 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bolder;
 }
 
 .globe-img {
@@ -554,7 +517,6 @@ footer.page-footer {
     }
     #top-banner .h1-landing {
         line-height: 50%;
-        font-family: 'Raleway', sans-serif;
         font-weight: 900;
         letter-spacing: 2px;
         color: white;
@@ -621,7 +583,6 @@ footer.page-footer {
     }
     #top-banner .h1-landing {
         line-height: 90%;
-        font-family: 'Raleway', sans-serif;
         font-weight: 900;
         letter-spacing: 2px;
         color: white;
@@ -663,7 +624,6 @@ footer.page-footer {
     }
     #top-banner .h1-landing {
         line-height: 90%;
-        font-family: 'Raleway', sans-serif;
         font-weight: 900;
         letter-spacing: 2px;
         color: white;
