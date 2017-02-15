@@ -16,6 +16,7 @@ main {
 .text-container {
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 17px;
 }
 
 
@@ -158,8 +159,9 @@ hr {
 .panel-transparent {
     background: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 15px;
 }
 
 .panel-form {
@@ -244,7 +246,7 @@ footer.page-footer {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    height: 450px;
+    height: 500px;
     padding: 0;
     margin-bottom: 0;
 }
@@ -337,7 +339,7 @@ footer.page-footer {
 
 .school-how {
     background: #f8f8f8;
-    height: 450px;
+    height: 480px;
     margin-bottom: 0;
 }
 
@@ -376,7 +378,7 @@ footer.page-footer {
     background-image: url("../images/volunteer-hands.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 450px;
+    height: 500px;
     margin-bottom: 0;
 }
 
@@ -477,6 +479,9 @@ footer.page-footer {
     }
     .user-img {
         height: 150px;
+    }
+    .text-container {
+        font-size: 14px;
     }
 }
 
