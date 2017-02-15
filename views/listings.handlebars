@@ -1,0 +1,144 @@
+<!-- Page Content goes here -->
+<!-- navbar with tabs -->
+<nav>
+    <div class="nav-wrapper container">
+        <img src="/images/logo.png" alt="logo" class="logo">
+        <a href="/" class="brand-logo">Edu-Care</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/schools">Schools</a></li>
+            <li><a href="/become-a-volunteer">Volunteers</a></li>
+            <li><a href="/volunteer">Volunteer Dashboard</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="/schools">Schools</a></li>
+            <li><a href="/become-a-volunteer">Volunteers</a></li>
+            <li><a href="/volunteer">Volunteer Dashboard</a></li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <div class="row section center-align listings-header">
+            <h1 class="margin-top-130 h1">Volunteer Listings</h1>
+            <h5>Schools, find your perfect volunteer here.</h5>
+        </div>
+        <!-- Filter -->
+        <div class="row margin-top-30">
+            <div class="col s12 m5">
+                <h4 class="margin-left-50">Refine By</h4>
+                <p class="margin-left-50">You can refine the volunteer listings by volunteer category or volunteer specialty.</p>
+                <a class="margin-left-50" href="/listings/">View All</a>
+                <ul class="collapsible margin-left-50" data-collapsible="accordion">
+                    {{!-- Filter by category --}}
+                    <li>
+                        <div class="collapsible-header" id="category-header">Volunteer Category</div>
+                        <div class="collapsible-body">
+                            <form id="filter-category-form">
+                                <p>
+                                    <input type="checkbox" id="panelist" data-category="panelist" data-checked="false" />
+                                    <label for="panelist">Panelist</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="lecturer" data-category="lecturer" data-checked="false"/>
+                                    <label for="lecturer">Lecturer</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="judge" data-category="judge" data-checked="false"/>
+                                    <label for="judge">Competition Judge</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="career" data-category="career" data-checked="false"/>
+                                    <label for="career">Career Guidance</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="shadowing" data-category="shadowing" data-checked="false"/>
+                                    <label for="shadowing">Job Shadowing</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="general" data-category="general" data-checked="false"/>
+                                    <label for="general">General Volunteering</label>
+                                </p>
+                                <a class="waves-effect waves-light btn" id="cat-search-button"><i class="material-icons left">cloud</i>Search</a>
+                            </form>
+                            <p>Click on at least one category to filter the results. You can search by multiple categories.</p>
+                        </div>
+                    </li>
+                    {{!-- filter by specialty --}}
+                    <li>
+                        <div class="collapsible-header">Volunteer Specialty</div>
+                        <div class="collapsible-body">
+                            <form id="autocomplete-form">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">textsms</i>
+                                    <input type="text" id="autocomplete-input" class="autocomplete" required>
+                                    <label for="autocomplete-input"></label>
+                                </div>
+                                 <button class="waves-effect waves-light btn" id="specialty-search-button" type="submit"><i class="material-icons left">cloud</i>Search</button>
+                            </form>
+                            <p>Start typing a search term and click on the suggested term which best matches.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Collection of volunteer data -->
+            <div class="col s12 m7" id='listings-div'>
+                <h4 class="margin-left-50 margin-right-50">Listings</h4>
+                <p class="margin-left-50 margin-right-50">Here are listings of our volunteers. Click on the contact button to send an email to the volunteer you are interested in.</p>
+                <p class="margin-left-50 margin-right-50">Want to narrow down the results? Refine the listings by category specialty.</p>
+                <ul class="collection margin-right-50 margin-left-50" id='listing-collapsible'>
+                    {{#each listings}}
+                    {{#if this.isActive}}
+                    <li class="collection-item hoverable" data-category="{{this.category}}">
+                        <div class= "row">
+                            <div class="col s12 m4 center-align">
+                                <img src="/images/user.png" height="150" class="user-img" alt="User">
+                                <br>
+                                <a class="waves-effect waves-light btn" href="mailto:{{this.User.username}}?Subject=Interested%20in%20volunteering%20opportunity" target="_top">Contact</a>
+                            </div>
+                            <div class="col s12 m1"></div>
+                            <div class="col s12 m7">
+                                <h5><span class="volunteer_name">{{this.Volunteer.volunteer_first_name}} {{this.Volunteer.volunteer_last_name}}</span></h5>
+                                <p class="bold"><i class="material-icons listing-material-icons">class</i> <span class="volunteer_category">{{this.category}}</span></p>
+                                <p class="bold"><i class="material-icons listing-material-icons">star</i> {{this.specialty}}</p>
+                                <hr class="listing-hr">
+                                <p><i class="material-icons listing-material-icons">location_on</i> <span class="volunteer_preferred_city">{{this.Volunteer.preferred_city}}</span></p>
+                                <p>How I can help: <span class="volunteer_bio">{{this.Volunteer.bio}}</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Footer -->
+<footer class="page-footer">
+    <div class="footer-container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Edu-care</h5>
+                <p class="grey-text text-lighten-4">Edu-Care pairs individuals looking to volunteer their skills and expertise to schools that are looking for a helping hand.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Our Engineers</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/aishaprograms" target="_blank">Aisha Ahmad</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/a-ashbeck" target="_blank">Alan Ashbeck</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/kshiro622" target="_blank">Katie Shiro</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/Pnickolas1" target="_blank">Peter Tountas</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="footer-container">
+            © 2017 Team Edu-care
+        </div>
+    </div>
+</footer>
+<!-- Materialize initialization -->
+<script type="text/javascript" src="/js/initialization.js"></script>
+<script type="text/javascript" src="/js/filter.js"></script>

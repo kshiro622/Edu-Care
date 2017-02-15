@@ -1,0 +1,675 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #f8f8f8;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.container {
+    width: 100%;
+}
+
+.text-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/*hr*/
+
+hr {
+    width: 170px;
+}
+
+.full-hr {
+    width: 98%;
+    margin-right: 30px;
+}
+
+
+/*margins*/
+
+.margin-top-130 {
+    margin-top: 130px;
+}
+
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-left-290 {
+    margin-left: 290px;
+}
+
+.margin-left-110 {
+    margin-left: 110px;
+}
+
+.margin-left-80 {
+    margin-left: 80px;
+}
+
+.margin-left-50 {
+    margin-left: 50px;
+}
+
+.margin-left-40 {
+    margin-left: 40px;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.margin-right-50 {
+    margin-right: 50px;
+}
+
+.margin-right-20 {
+    margin-right: 20px;
+}
+
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.padding-bottom-30 {
+    padding-bottom: 30px;
+}
+
+
+/*Text*/
+
+.bold {
+    font-weight: bold;
+}
+
+.p-large-text {
+    font-size: 17px;
+}
+
+.h1-small {
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.raleway-font {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
+.raleway-font-light {
+    font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+}
+
+
+/*Icons*/
+
+.icon {
+    height: 50px;
+    width: auto;
+}
+
+.icon-sm {
+    height: 25px;
+    width: auto;
+}
+
+.material-icons {
+    font-size: 30px;
+}
+
+.icon {
+    height: 30px;
+    width: auto;
+    margin-top: 20px;
+}
+
+
+/*Panels*/
+
+.panel-transparent {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    padding-top: 30px;
+    padding-bottom: 2px;
+}
+
+.panel-form {
+    background: white;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+.panel {
+    background: white;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Nav bar */
+
+.logo {
+    height: 45px;
+    width: auto;
+    margin-top: 8px;
+    margin-right: 3px;
+}
+
+nav {
+    background-color: #1198EA;
+}
+
+.nav-wrapper,
+.footer-container {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+
+/*Buttons*/
+
+.btn,
+.btn-large {
+    background-color: #12F489;
+}
+
+.archive-activate {
+    font-style: normal;
+}
+
+
+/*Footer*/
+
+footer.page-footer {
+    background-color: #a9a9a9;
+}
+
+
+/*Landing*/
+
+#helping-banner {
+    background: #f8f8f8;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+#top-banner {
+    height: 500px;
+    background-image: url("../images/listening-lighter.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+#gray-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+}
+
+#top-banner .h1-landing {
+    line-height: 50%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 80px;
+}
+
+#works-banner {
+    background-image: url("../images/chalkboard.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 400px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#expert-background {
+    background-image: url("../images/comp-hardware.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin-top: 0;
+}
+
+#experts-banner {
+    height: 417px;
+    padding: 0;
+    margin: 0;
+}
+
+#experts-text {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.p-text {
+    font-size: 20px;
+}
+
+.p-thirds {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#all-banner {
+    padding: 0;
+    margin: 0;
+    height: 440px;
+    background: #f8f8f8;
+}
+
+#all-title {
+    margin-top: 40px;
+}
+
+.checks {
+    list-style-image: url("../images/checkmark.png");
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+#officer-img {
+    height: 100%;
+}
+
+#officer {
+    padding: 0;
+    margin: 0;
+    height: 440px;
+}
+
+.gray-border-bottom {
+    border-bottom: solid 1px lightgray;
+}
+
+
+/*Category Cards*/
+
+.card-title {
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+
+/*Schools*/
+
+.welcome-schools {
+    background-image: url("../images/welcome-schools copy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.welcome-schools h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
+.pencils-background {
+    background-image: url("../images/pencils.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    margin-bottom: 0;
+}
+
+.desk-background {
+    background-image: url("../images/schooldesk.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    margin-bottom: 0;
+}
+
+.listings-header {
+    background-image: url("../images/science-volunteer.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    color: white;
+    margin-bottom: 0;
+}
+
+.listings-header h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
+
+/*Volunteer*/
+
+.volunteer-with-us {
+    background-image: url("../images/volunteer.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    color: white;
+    margin-bottom: 0;
+}
+
+.volunteer-with-us h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
+.globe-img {
+    height: 420px;
+    width: auto;
+}
+
+.connect-to-school {
+    background-image: url("../images/shaking-hands.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    color: #f8f8f8;
+    margin-bottom: 0;
+}
+
+.hands-background {
+    background-image: url("../images/volunteer-hands.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    margin-bottom: 0;
+}
+
+.white-background {
+    background: white;
+    margin-bottom: 0;
+}
+
+.card-row {
+    padding: 30px;
+}
+
+#new-volunteer-form {
+    padding: 20px;
+}
+
+#create-account {
+    background: white;
+    height: 500px;
+    margin: 0;
+}
+
+.span-text {
+    font-size: 15px;
+}
+
+.archive {
+    color: gray;
+    font-style: italic;
+}
+
+.a-activate {
+    color: green;
+}
+
+
+/* Style for the sign in box */
+
+#sign-in {
+    display: inline-block;
+    padding: 32px 48px 0px 48px;
+    border: 1px solid #EEE
+}
+
+.listings {
+    width: 98%;
+}
+
+.sign-in-background {
+    background: url("../images/ipad.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#new-listing {
+    padding-top: 10px;
+}
+
+
+/*Listings*/
+
+.collection {
+    border: none;
+}
+
+.collection .collection-item {
+    margin-bottom: 14px;
+}
+
+.listing-material-icons {
+    font-size: 1em;
+}
+
+.listing-hr {
+    margin: 0;
+    width: 100%;
+}
+
+.volunteer_name {
+    color: #1198EA;
+}
+
+
+/*Media Queries*/
+
+@media only screen and (max-width: 1000px) {
+    .margin-left-80 {
+        margin-left: 60px;
+    }
+    .archive-activate {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+    .pencils-background,
+    .desk-background {
+        height: 100%;
+    }
+    .user-img {
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .h4 {
+        font-size: 30px;
+        margin-top: 0;
+    }
+    .h2 {
+        font-size: 30px;
+    }
+    .p-text {
+        font-size: 15px;
+    }
+    .user-img {
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 805px) {
+    .margin-top-media-805 {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 785px) {
+    .h5 {
+        font-size: 17px;
+    }
+    .margin-top-media-785 {
+        margin-top: 20px;
+    }
+    .hands-background {
+        height: 100%;
+    }
+    .vol-spec {
+        font-size: 5px;
+    }
+    #top-banner .h1-landing {
+        line-height: 50%;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: white;
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    .h1 {
+        font-size: 45px;
+    }
+    .sign-up-btn {
+        margin-top: 30px;
+    }
+    .globe-img {
+        height: 350px;
+    }
+    .h4 {
+        font-size: 25px;
+    }
+    #helping-banner {
+        height: 100%;
+    }
+    .user-img {
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #experts-banner {
+        height: 100%;
+    }
+    #expert-background {
+        height: 400px;
+    }
+    #works-banner {
+        padding-top: 0;
+        height: 100%;
+        padding-bottom: 20px;
+    }
+    .margin-top-media-600 {
+        margin-top: 30px;
+    }
+    .margin-top-media-785 {
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+    .archive-activate {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 15px;
+    }
+    .collapsible {
+        margin-right: 40px;
+    }
+    .user-img {
+        height: 100px;
+    }
+    .margin-right-50 {
+        margin-right: 25px;
+    }
+    .margin-left-50 {
+        margin-left: 25px;
+    }
+    #top-banner .h1-landing {
+        line-height: 90%;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: white;
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .h1 {
+        font-size: 35px;
+    }
+    .sign-up-btn {
+        margin-top: 10px;
+    }
+    .create-account-stud {
+        margin-top: 30px;
+    }
+    .h2 {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .h1 {
+        font-size: 35px;
+    }
+    .create-account-stud {
+        font-size: 17px;
+    }
+    .h2 {
+        font-size: 25px;
+    }
+    .small-font-460 {
+        font-size: 12px;
+    }
+    .btn-large {
+        height: 40px;
+        line-height: 40px;
+    }
+    #top-banner .h1-landing {
+        line-height: 90%;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: white;
+        font-size: 45px;
+    }
+    .logo {
+        height: 35px;
+    }
+}

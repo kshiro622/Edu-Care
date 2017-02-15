@@ -1,0 +1,217 @@
+<!-- Page Content goes here -->
+<!-- navbar with tabs -->
+<nav class="nav-extended">
+    <div class="nav-wrapper container">
+        <img src="/images/logo.png" alt="logo" class="logo">
+        <a href="/" class="brand-logo">Edu-Care</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/schools">Schools</a></li>
+            <li><a href="/become-a-volunteer">Volunteers</a></li>
+            <li><a href="/logout">Sign Out</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="/schools">Schools</a></li>
+            <li><a href="/become-a-volunteer">Volunteers</a></li>
+            <li><a href="/logout">Sign Out</a></li>
+        </ul>
+    </div>
+    <div class="nav-content container">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="#volunteer-info">Your Information</a></li>
+            <li class="tab"><a href="#new-listing">Add A Listing</a></li>
+            <li class="tab"><a href="#volunteer-listings">Your Current Listings</a></li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s1 m1"></div>
+            <div class="col s10 m10">
+                <h1 class="h1-small raleway-font">Your Account</h1>
+                <p>Here you can find your account information, add new listings, or view your current listings.</p>
+            </div>
+            <div class="col s1 m1"></div>
+        </div>
+        <!-- volunteer info -->
+        <div class="row" id="volunteer-info">
+            <div class="col s12 m12">
+                <div class="row">
+                    <div class="col s1 m1"></div>
+                    <div class="col s10 m10 panel">
+                        <h4>Account</h4>
+                        <hr class="full-hr">
+                        <div class="row">
+                            <div class="col s12 m4">
+                                <img src="/images/user.png" height="200" alt="User">
+                            </div>
+                            <div class="col s12 m5">
+                                <h5><i class="material-icons">perm_identity</i><span class="volunteer_name">{{volunteer.volunteer_first_name}} {{volunteer.volunteer_last_name}}</span></h5>
+                                <p>Preferred City: <span class="volunteer_preferred_city">{{volunteer.preferred_city}}</span></p>
+                                <p>Email: <span class="volunteer_email">{{volunteer.User.username}}</span></p>
+                                <p>Bio: <span class="volunteer_bio">{{volunteer.bio}}</span></p>
+                            </div>
+                            <div class="col s12 m3">
+                            {{#unless volunteer}}
+                                <a class="waves-effect waves-light btn hoverable" href="/new-volunteer-form">Create Profile</a>
+                            {{/unless}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s1 m1"></div>
+                </div>
+            </div>
+        </div>
+        <!-- new listing form -->     
+        <div class="row" id='new-listing'>
+            <div class="col s12 m12">
+                <div class="row">
+                    <div class="col s1 m1"></div>
+                    <div class="col s10 m10 panel">
+                        <h4>Add New Listing</h4>
+                        <p>Add a new listing by selecting a category and typing in a specialty.</p>
+                        {{#if volunteer}}
+                            <form id="new-listing-form">
+                                <!-- Category -->
+                                <div class="row">
+                                    <div class="input-field col s12 m6">
+                                        <select id="category" required>
+                                            <option value="" disabled>Volunteer Category</option>
+                                            <option value="General">General Volunteering</option>
+                                            <option value="Career">Career Guidance</option>
+                                            <option value="Judge">Competition Judge</option>
+                                            <option value="Shadowing">Job Shadowing</option>
+                                            <option value="Lecturer">Lecturer</option>
+                                            <option value="Panelist">Panelist</option>
+                                        </select>
+                                        <label for="category">Volunteer Category</label>
+                                    </div>
+                                <!-- Specialty -->
+                                    <div class="input-field col s12 m6">
+                                        <input placeholder="e.g. Computer Science" id="specialty" type="text" class="validate" required>
+                                        <label for="specialty">Your Specialty</label>
+                                    </div>
+                                </div>
+                                <!-- Submit button -->
+                                <div class="row">
+                                    <button class="btn waves-effect waves-light margin-left-10" type="submit" id="listing-form-submit">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </form>
+                        {{else}}
+                            <p>Please create a volunteer profile.</p>
+                        {{/if}}
+                    </div>
+                    <div class="col s1 m1"></div>
+                </div>
+            </div>
+        </div>   
+        
+        <!-- volunteer listings -->
+        <div id="volunteer-listings">
+            <div class="row">
+                <div class="col s1 m1"></div>
+                <div class="col s10 m10 panel">
+                    <h4>Active Listings</h4>
+                    <p>These are your current listings. If you wish to remove any listing, click 'Archive'.</p>
+                    <ul class="collection listings">
+                        {{#each listings}}
+                        {{#if this.isActive}}
+                        <li class="collection-item">
+                            <div class="row">
+                                <div class="col s12 m1 ">
+                                    <img src="/images/green-check.png" alt="Check" height="25" class="circle">
+                                </div>
+                                <div class="col s12 m3 ">
+                                    <span class="volunteer_location span-text"><span class="bold">Preferred City: </span>{{this.Volunteer.preferred_city}}</span>
+                                </div>
+                                <div class="col s12 m3 ">
+                                    <span class="volunteer_category span-text"><span class="bold">Category: </span>{{this.category}}</span>
+                                </div>
+                                <div class="col s12 m3 ">
+                                    <span class="volunteer_specialty span-text"><span class="bold">Specialty: </span>{{this.specialty}}</span>
+                                </div>
+                                <div class="col s12 m2 ">
+                                    <form action="/api/volunteer/listing/archive/:{{this.id}}?_method=PUT" method="POST">
+                                        <input type="hidden" name="id" value={{this.id}}>
+                                        <button class="btn waves-effect waves-light grey archive-activate archive-activate" type="submit">Archive</button>
+                                     </form> 
+                                </div>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="col s1 m1"></div>
+            </div>
+            {{!-- Archived listins --}}
+            <div class="row">
+                <div class="col s1 m1"></div>
+                <div class="col s10 m10 panel">
+                    <h4>Archived Listings</h4>
+                    <p>These are your archived listings. If you wish to remove any listing, click 'Activate'.</p>
+                    <ul class="collection listings">
+                        {{#each listings}}
+                        {{#unless this.isActive}}
+                        <li class="collection-item archive">
+                            <div class="row">
+                                <div class="col s12 m1">
+                                    <img src="/images/archive-icon.png" alt="Check" height="25" class="circle">
+                                </div>
+                                <div class="col s12 m3">
+                                    <span class="volunteer_location span-text"><span class="bold">Preferred City: </span>{{this.Volunteer.preferred_city}}</span>
+                                </div>
+                                <div class="col s12 m3">
+                                    <span class="volunteer_category span-text"><span class="bold">Category: </span>{{this.category}}</span>
+                                </div>
+                                <div class="col s12 m3">
+                                    <span class="volunteer_specialty span-text"><span class="bold">Specialty: </span>{{this.specialty}}</span>
+                                </div>
+                                <div class="col s12 m2">
+                                    <form action="/api/volunteer/listing/activate/:{{this.id}}?_method=PUT" method="POST">
+                                        <input type="hidden" name="id" value={{this.id}}>
+                                        <button class="btn waves-effect waves-lightarchive-activate archive-activate" type="submit">Activate</button>
+                                     </form> 
+                                </div>
+                            </div>
+                        </li>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="col s1 m1"></div>
+            </div>  
+        </div>
+    </div>
+</main>
+<!-- Footer -->
+<footer class="page-footer">
+    <div class="footer-container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Edu-care</h5>
+                <p class="grey-text text-lighten-4">Edu-Care pairs individuals looking to volunteer their skills and expertise to schools that are looking for a helping hand.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Our Engineers</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/aishaprograms" target="_blank">Aisha Ahmad</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/a-ashbeck" target="_blank">Alan Ashbeck</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/kshiro622" target="_blank">Katie Shiro</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/Pnickolas1" target="_blank">Peter Tountas</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="footer-container">
+            © 2017 Team Edu-care
+        </div>
+    </div>
+</footer>
+<!-- Materialize initialization -->
+<script type="text/javascript" src="/js/initialization.js"></script>
+<script type="text/javascript" src="/js/newListingForm.js"></script>
