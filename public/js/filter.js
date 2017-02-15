@@ -37,9 +37,9 @@ $(document).ready(function() {
     // self executing function
     (function checkResults() {
         if ($('#listing-collapsible').html().trim() === '') {
-            var message = '<p>Your search did not match any listings.</p>' +
-                '<p>Suggestions:</p>' +
-                '<ul><li>- Make sure all words are spelled correctly.</li>' +
+            var message = '<h5 class="margin-left-80 margin-top-50">Your search did not match any listings.</h5>' +
+                '<p class="margin-left-80">Suggestions:</p>' +
+                '<ul class="margin-left-80"><li>- Make sure all words are spelled correctly.</li>' +
                 '<li>- Try a different search for category or specialty.</li></ul>';
             $('#listings-div').html(message);
         }
